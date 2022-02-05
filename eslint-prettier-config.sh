@@ -165,6 +165,24 @@ else
   "printWidth": '${max_len_val}',
   "singleQuote": true,
   "trailingComma": "'${trailing_comma_pref}'"
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "printWidth": 90,
+  "proseWrap": "preserve",
+  "requirePragma": false,
+  "semi": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": "*.scss",
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
 }' >> .prettierrc${config_extension}
 fi
 
