@@ -164,7 +164,7 @@ else
   echo ${config_opening}'
   "printWidth": '${max_len_val}',
   "singleQuote": true,
-  "trailingComma": "'${trailing_comma_pref}'"
+  "trailingComma": "'${trailing_comma_pref}'",
   "arrowParens": "always",
   "bracketSpacing": true,
   "insertPragma": false,
