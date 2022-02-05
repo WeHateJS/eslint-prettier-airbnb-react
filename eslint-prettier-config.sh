@@ -168,7 +168,6 @@ else
   "arrowParens": "always",
   "bracketSpacing": true,
   "insertPragma": false,
-  "jsxBracketSameLine": false,
   "printWidth": 90,
   "proseWrap": "preserve",
   "requirePragma": false,
