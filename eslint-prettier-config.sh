@@ -121,37 +121,92 @@ else
   > ".eslintrc${config_extension}" # truncates existing file (or creates empty)
 
   echo ${config_opening}'
-  "extends": [
-    "airbnb",
-    "plugin:prettier/recommended",
-    "prettier"
-  ],
+ "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "env": {
     "browser": true,
-    "commonjs": true,
-    "es6": true,
-    "jest": true,
-    "node": true
+    "es2021": true,
+    "node": true,
+    "jest": true
   },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@next/next/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "import"],
   "rules": {
-    "jsx-a11y/href-no-hash": ["off"],
-    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
-    "max-len": [
-      "warn",
+    "arrow-parens": 0,
+    "camelcase": [
+      "off",
       {
-        "code": '${max_len_val}',
-        "tabWidth": 2,
-        "comments": '${max_len_val}',
-        "ignoreComments": false,
-        "ignoreTrailingComments": true,
-        "ignoreUrls": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreRegExpLiterals": true
+        "ignoreDestructuring": true,
+        "allow": ["UNSAFE_componentWillMount"]
       }
-    ]
+    ],
+    "comma-dangle": "off",
+    "eqeqeq": "off",
+    "global-require": 0,
+    "import/order": 2,
+    "import/no-dynamic-require": "off",
+    "import/no-extraneous-dependencies": ["off"],
+    "import/prefer-default-export": "off",
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "jsx-a11y/media-has-caption": "off",
+    "linebreak-style": ["error", "unix"],
+    "max-len": "off",
+    "no-console": 1,
+    "no-nested-ternary": "off",
+    "no-param-reassign": 0,
+    "no-shadow": "off",
+    "no-underscore-dangle": ["error", { "allow": ["_id", "__typename", "__schema"] }],
+    "object-curly-newline": "off",
+    "quotes": ["error", "single"],
+    "react/forbid-prop-types": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-uses-react": "off",
+    "react/jsx-uses-vars": "error",
+    "react/no-array-index-key": "off",
+    "react/no-danger": "off",
+    "react/no-find-dom-node": 1,
+    "react/no-string-refs": 1,
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": 2,
+    "semi": ["error", "always"]
   }
-}' >> .eslintrc${config_extension}
+  }' >> .eslintrc${config_extension}
 fi
 
 
