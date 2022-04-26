@@ -211,7 +211,6 @@ else
   "arrowParens": "always",
   "bracketSpacing": true,
   "insertPragma": false,
-  "printWidth": 90,
   "proseWrap": "preserve",
   "requirePragma": false,
   "semi": true,
